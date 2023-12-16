@@ -22,5 +22,10 @@ public class UserService {
         return users.stream().map(UserDTO::new).toList();
     }
 
+    public void create(UserDTO userDTO){
+        User user = new User(userDTO);
+        userRepository.save(user);
+    }
+
 
 }
