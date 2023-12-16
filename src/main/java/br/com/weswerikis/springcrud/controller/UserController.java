@@ -3,6 +3,8 @@ package br.com.weswerikis.springcrud.controller;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,6 +26,9 @@ public class UserController {
         return userService.listAll();
     }
 
-    
+    @PostMapping
+    public void create(@RequestBody UserDTO userDTO){
+        userService.create(userDTO);
+    }
 
 }
