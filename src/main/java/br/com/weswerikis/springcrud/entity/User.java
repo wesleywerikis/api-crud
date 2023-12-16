@@ -36,6 +36,9 @@ public class User {
     @Column(nullable = false)
     private String email;
 
+    public User() {
+    }
+
     public User(UserDTO dto) {
         BeanUtils.copyProperties(dto, this);
     }
