@@ -37,4 +37,8 @@ public class UserService {
         userRepository.delete(user);
     }   
 
+    public UserDTO findById(Long id){
+        return new UserDTO(userRepository.findById(id).get());
+    }
+
 }
