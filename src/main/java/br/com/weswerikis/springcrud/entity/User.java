@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Table(name = "tb_user")
 @Getter
 @Setter
+@EqualsAndHashCode(of = "id")
 public class User {
     
     @Id
@@ -27,7 +29,7 @@ public class User {
 
     @Column(nullable = false)
     private String passwoerd;
-    
+
     @Column(nullable = false)
     private String email;
 
