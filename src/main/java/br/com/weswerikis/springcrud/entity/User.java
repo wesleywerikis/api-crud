@@ -1,5 +1,8 @@
 package br.com.weswerikis.springcrud.entity;
 
+import org.springframework.beans.BeanUtils;
+
+import br.com.weswerikis.springcrud.dto.UserDTO;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,5 +35,9 @@ public class User {
 
     @Column(nullable = false)
     private String email;
+
+    public User(UserDTO dto) {
+        BeanUtils.copyProperties(dto, this);
+    }
 
 }
