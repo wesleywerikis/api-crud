@@ -32,4 +32,9 @@ public class UserService {
         return new UserDTO(userRepository.save(user));
     }
 
+    public void delete (Long id){
+        User user = userRepository.findById(id).get();
+        userRepository.delete(user);
+    }   
+
 }
