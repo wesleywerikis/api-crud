@@ -27,5 +27,9 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public UserDTO update(UserDTO userDTO){
+        User user = new User(userDTO);
+        return new UserDTO(userRepository.save(user));
+    }
 
 }
